@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=100, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link href="css/global.css" rel="stylesheet" type="text/css">
+        <script>
+function convert(degree) {
+    if (degree == "C") {
+        F = document.getElementById("c").value * 9 / 5 + 32;
+        document.getElementById("f").value = Math.round(F);
+    } else	{
+        C = (document.getElementById("f").value -32) * 5 / 9;
+        document.getElementById("c").value = Math.round(C);
+    }
+}
+</script><script>
+function realizaProceso(){
+        console.log(location.pathname);
+        valor1 = parseInt(document.getElementById("valor1").value);
+        valor2 = parseInt(document.getElementById("valor2").value);
+        suma = valor1+valor2;
+        $("#resultado").html(suma);
+
+}
+</script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        
+        <title>Hello World.  Temperature Converter</title>
+    </head>
+    <body>
+	<HR align="CENTER" size="5" width="875" color="Red" noshade>
+	<h3>
+        <br><br>
+        <h2>Desarrollo de una aplicacion <br>PhoneGap para la conversion <br>de una temperatura en Celsius <br>o Fahrenheit</h2>
+	<br><br>
+	<table>
+	    <tr>
+	      <p>Inserta algun valor dentro de los siguientes campos:</p>
+<input id="c" onkeyup="convert('C')"> Grados Celsius<br>
+Igual a <br> 
+<input id="f" onkeyup="convert('F')"> grados Fahrenheit 
+<br><br>
+        <form name="Calcula" Method=post>
+ 
+Introduce valor 1
+ 
+<input type="text" name="caja_texto" id="valor1" value="0"/> 
+Introduce valor 2
+<input type="text" name="caja_texto" id="valor2" value="0"/>
+<br>
+Realiza suma
+<input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/>
+ 
+<br/>
+ 
+Resultado: <span id="resultado">0</span>
+  </form>          
+    <br><br>
+    
+<p><b>Practica de PhoneGap realizada por Iván García Campos y Estefania Morales Luis.</b></p>
+            <!--<div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script>
+function convert(degree) {
+    if (degree == "C") {
+        F = document.getElementById("c").value * 9 / 5 + 32;
+        document.getElementById("f").value = Math.round(F);
+    } else	{
+        C = (document.getElementById("f").value -32) * 5 / 9;
+        document.getElementById("c").value = Math.round(C);
+    }
+}
+</script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>-->
+    </body>
+</html>
